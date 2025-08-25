@@ -97,7 +97,7 @@ npm start
 
 ## API Documentation
 
-### POST /identify
+### POST /api/user/identify
 Identifies and consolidates customer contact information.
 
 **Request Body:**
