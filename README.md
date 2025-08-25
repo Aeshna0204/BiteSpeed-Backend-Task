@@ -18,7 +18,7 @@ You can test the Identity Service endpoint using Postman or any API client.
     "email": "test@example.com",
     "phoneNumber": "1234567890"
   }
-```
+
 
 ## Features
 
