@@ -26,49 +26,57 @@ A Node.js service built with Express.js and Prisma ORM that identifies and track
 - npm or yarn
 
 ### 1. Clone and Install
-\`\`\`bash
+```
 mkdir bitespeed-identity-service
 cd bitespeed-identity-service
+```
 
 # Copy all the files from the artifact above
 # Then install dependencies:
+```
 npm install
-\`\`\`
+```
 
 ### 2. Environment Setup
 Create a \`.env\` file with your database credentials:
-\`\`\`env
+```
 DATABASE_URL="postgresql://username:password@localhost:5432/bitespeed?schema=public"
 PORT=3000
 NODE_ENV=development
-\`\`\`
+```
 
 ### 3. Database Setup
-\`\`\`bash
+
 # Generate Prisma client
+```
 npm run db:generate
-
+```
 # Push schema to database (for development)
+```
 npm run db:push
-
+```
 # OR create and run migrations (for production)
+```
 npm run db:migrate
-
+```
 # Optional: Seed database with sample data
+```
 npm run db:seed
-
+```
 # Optional: Open Prisma Studio to view data
+```
 npm run db:studio
-\`\`\`
+```
 
 ### 4. Run the Service
-\`\`\`bash
+```
 # Development mode with auto-reload
 npm run dev
-
+```
 # Production mode
+```
 npm start
-\`\`\`
+```
 
 ## API Documentation
 
@@ -76,15 +84,15 @@ npm start
 Identifies and consolidates customer contact information.
 
 **Request Body:**
-\`\`\`json
+```
 {
   "email": "customer@example.com",    // optional
   "phoneNumber": "1234567890"         // optional
 }
-\`\`\`
+```
 
 **Response:**
-\`\`\`json
+```
 {
   "contact": {
     "primaryContatctId": 1,
@@ -93,13 +101,13 @@ Identifies and consolidates customer contact information.
     "secondaryContactIds": [2, 3]
   }
 }
-\`\`\`
+```
 
 ### GET /health
 Health check endpoint that returns service status.
 
 ## Project Structure
-\`\`\`
+```
 src/
 ├── controllers/        # Request handlers
 ├── services/          # Business logic
@@ -109,7 +117,7 @@ src/
 prisma/
 ├── schema.prisma     # Database schema
 └── seed.js          # Sample data
-\`\`\`
+```
 
 ## Key Business Logic
 
@@ -121,7 +129,7 @@ prisma/
 
 ## Example Usage
 
-\`\`\`bash
+```
 # Create new contact
 curl -X POST http://localhost:3000/identify \\
   -H "Content-Type: application/json" \\
@@ -131,12 +139,13 @@ curl -X POST http://localhost:3000/identify \\
 curl -X POST http://localhost:3000/identify \\
   -H "Content-Type: application/json" \\
   -d '{"email": "john.doe@example.com", "phoneNumber": "123456"}'
-\`\`\`
+```
 
 ## Development Commands
-
+```
 - \`npm run dev\` - Start development server
 - \`npm run db:studio\` - Open database GUI
 - \`npm run db:generate\` - Generate Prisma client
 - \`npm run db:push\` - Push schema changes
 - \`npm run db:seed\` - Seed sample data
+```
