@@ -3,6 +3,23 @@ BiteSpeed Backend Task Submission by Aeshna Jain
 
 A Node.js service built with Express.js and Prisma ORM that identifies and tracks customer identity across multiple purchases by linking contacts based on shared email addresses or phone numbers.
 
+## Testing the Endpoint
+
+You can test the Identity Service endpoint using Postman or any API client.
+
+**POST** ` https://bitespeed-backend-task-cpvp.onrender.com/api/user/identify`
+
+- **Headers:**
+  - `Content-Type: application/json`
+
+- **Request Body (example):**
+  ```
+  {
+    "email": "test@example.com",
+    "phoneNumber": "1234567890"
+  }
+```
+
 ## Features
 
 - **Smart Contact Linking**: Automatically links contacts sharing email or phone numbers
