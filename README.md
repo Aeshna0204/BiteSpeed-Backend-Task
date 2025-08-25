@@ -148,12 +148,12 @@ prisma/
 
 ```
 # Create new contact
-curl -X POST http://localhost:3000/identify \\
+curl -X POST http://localhost:3000/api/user/identify \\
   -H "Content-Type: application/json" \\
   -d '{"email": "john@example.com", "phoneNumber": "123456"}'
 
 # Link contacts (if phone matches existing contact)
-curl -X POST http://localhost:3000/identify \\
+curl -X POST http://localhost:3000/api/user/identify \\
   -H "Content-Type: application/json" \\
   -d '{"email": "john.doe@example.com", "phoneNumber": "123456"}'
 ```
